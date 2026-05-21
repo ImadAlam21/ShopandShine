@@ -1,0 +1,9 @@
+{
+  "name": "Shop & Shine | Luxury Jewelry",
+  "description": "A premium jewelry e-commerce platform with secure payments and bespoke ordering.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

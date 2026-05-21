@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-gold: #D4AF37;
+  --color-gold-light: #F9F4E8;
+  --color-ink: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Luxury Recipe Accents */
+.luxury-card {
+  @apply bg-white rounded-3xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md;
+}
+
+.gold-button {
+  @apply bg-gold text-white px-8 py-3 rounded-full font-medium tracking-wide transition-transform active:scale-95 hover:brightness-110;
+}
+
+.oval-mask {
+  @apply aspect-[3/4] object-cover rounded-[100px];
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  @apply rotate-180 uppercase tracking-[0.2em] text-[10px] font-semibold text-gray-400;
+}
