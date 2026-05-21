@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts (bound to next/font CSS variables in app/layout.tsx) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", ui-serif, Georgia,
+    serif;
+
+  /* Pink palette — elegant & premium, not candy. */
+  --color-rose: #c2185b; /* primary CTA — deep raspberry rose */
+  --color-rose-dark: #8e1247; /* hover/pressed */
+  --color-rosegold: #b76e79; /* warm bridge from the old gold */
+  --color-rose-soft: #e59cb3; /* secondary / hovers */
+  --color-rose-light: #fbe9ef; /* blush backgrounds, borders */
+  --color-blush: #fff5f7; /* near-white page tint */
+  --color-ink: #2a2024; /* warm charcoal text */
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* Primary call-to-action button (replaces the old .gold-button). */
+  .rose-button {
+    @apply inline-flex items-center justify-center bg-rose text-white px-8 py-3
+      rounded-full font-medium tracking-wide transition-all active:scale-95
+      hover:bg-rose-dark disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .outline-button {
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full
+      border border-ink/20 text-ink font-medium tracking-wide transition-all
+      hover:border-rose hover:text-rose active:scale-95;
+  }
+
+  .luxury-card {
+    @apply bg-white rounded-3xl shadow-sm border border-rose-light
+      transition-all duration-300 hover:shadow-md;
+  }
+
+  .field {
+    @apply w-full bg-white border border-rose-light rounded-2xl px-5 py-3.5
+      text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2
+      focus:ring-rose/40 focus:border-rose transition-all;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    @apply rotate-180 uppercase tracking-[0.2em] text-[10px] font-semibold;
+  }
+
+  .oval-mask {
+    @apply aspect-[3/4] object-cover rounded-[100px];
+  }
+}
